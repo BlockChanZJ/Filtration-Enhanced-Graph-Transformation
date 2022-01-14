@@ -2,21 +2,28 @@
 
 file='../gnn_ds.txt'
 file='../attr_ds.txt'
+file='../tmp_ds.txt'
 layers=(2 3 4)
 intact_snapshot=(001 002 003 004 005)
 partial_snapshot=(002 003 004 005 010)
 hidden_dim=64
 lr=0.001
 
-prog='sage.py'
-if [ $# != 2 ]; then
-  echo 'Usage: ./[sh] [lr] [edge-standard]'
+if [ $# != 3 ]; then
+  echo 'Usage: ./[sh] [lr] [dropout] [edge-standard]'
   exit 1;
 fi
 
+prog='sage_v2.py'
+if [ $2 != 0.5 ]; then
+  prog='sage.py'
+  echo 'sage.py'
+fi
+
 lr=$1
-edge_standard=$2
-out_file=sage-$2-$1.json
+dropout=$2
+edge_standard=$3
+out_file=sage-$3-$1-$2.json
 
 
 for d in $(cat $file); do

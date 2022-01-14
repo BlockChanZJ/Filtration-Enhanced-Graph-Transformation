@@ -15,6 +15,7 @@ partial_layers=()
 
 ds_name='../kernel_ds.txt'
 ds_name='../attr_ds.txt'
+ds_name='../tmp_ds.txt'
 
 for d in `cat $ds_name`
 do

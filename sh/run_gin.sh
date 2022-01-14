@@ -2,6 +2,7 @@
 
 file='../gnn_ds.txt'
 file='../attr_ds.txt'
+file='../tmp_ds.txt'
 layers=(2 3 4)
 intact_snapshot=(001 002 003 004 005)
 partial_snapshot=(002 003 004 005 010)

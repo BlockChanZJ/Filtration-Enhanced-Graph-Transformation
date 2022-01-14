@@ -18,27 +18,41 @@
 - scipy (==1.7.0)
 
 ## Data
-Add dataset name  in `tmp_ds.txt` which is available in `https://ls11-www.cs.tu-dortmund.de/staff/morris/graphkerneldataset`. And we have provided `build_all_feg.sh` in `sh` to download all data and build filtration-enhanced graphs.
+Add dataset name  in `tmp_ds.txt` which is available in `https://ls11-www.cs.tu-dortmund.de/staff/morris/graphkerneldataset`. And we have provided `build_all_feg.sh` and `build_all_fes.sh`in `sh` to download all data and build filtration-enhanced graphs and snapshots.
 To download dataset and build FEG with filtration of **native edge weight(or native vertex attributes)**, navigate to `sh` folder and type the following command into the terminal:
+
 ```bash
 $ ./build_all_feg.sh attr
 $ ./build_all_feg.sh vattr
 ```
 
-## Run Graph Kernels
-To run Weisfeiler-Lehman Subtree kernel, ShortestPath Kernel and GraphLet Kernel for datasets with filtration of **common neighbors**, navigate to `sh` folder and type the following command into the terminal:
+## Run Graph Kernels for FEG
+To run Weisfeiler-Leman Subtree kernel, ShortestPath Kernel and GraphLet Kernel for datasets with filtration of **native edge weight**, navigate to `sh` folder and type the following command into the terminal:
 ```bash
-$ ./run_kernel.sh cn log-cn
+$ ./run_kernel.sh attr [directory name]
 ```
 
+## Run Graph Kernels for FES
+To run Weisfeiler-Leman Subtree kernel, ShortestPath Kernel and GraphLet Kernel for datasets with filtration of **native vertex attributes**, navigate to `sh` folder and type the following command into the terminal:
+```bash
+$ ./run_kernel_snapshot.sh vattr [directory name]
+```
+
+
 ## Run GIN
-To run GIN for datasets with filtration of degeneracy, navigate to `sh` folder and type the following command into the terminal:
+To run GIN for datasets with filtration of **core number**, navigate to `sh` folder and type the following command into the terminal:
 ```bash
 $ ./run_gin.sh gin [lr] [dropout] degeneracy
 ```
 
+## Run GraphSAGE
+To run GIN for datasets with filtration of **ricci-curvature**, navigate to `sh` folder and type the following command into the terminal:
+```bash
+$ ./run_sage.sh [lr] [dropout] curvature
+```
+
 ## Run GraphSNN
-To run GraphSNN for datasets with filtration of ricci-curvature, navigate to `sh` folder and type the following command into the terminal:
+To run GraphSNN for datasets with filtration of **ricci-curvature**, navigate to `sh` folder and type the following command into the terminal:
 ```bash
 $ ./run_graphsnn.sh [lr] [dropout] curvature
 ```

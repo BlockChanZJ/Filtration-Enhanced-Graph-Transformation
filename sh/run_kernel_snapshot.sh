@@ -13,6 +13,7 @@ partial_snapshot_layer=(002 003 004 005 006 007 008 009 010 020 050)
 
 ds_name='../attr_ds.txt'
 # ds_name='../kernel_ds.txt'
+ds_name='../tmp_ds.txt'
 
 for d in `cat $ds_name`
 do
